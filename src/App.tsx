@@ -25,11 +25,43 @@ function Thumb({ p, big = false }: { p: Proyecto; big?: boolean }) {
   return <img src={big ? shot(p.id) : thumb(p.id)} alt={p.name} loading="lazy" onError={() => setErr(true)} />;
 }
 
+function useFavoritos(): [string[], (id: string) => void] {
+  const [favs, setFavs] = useState<string[]>(() => {
+    try { return JSON.parse(localStorage.getItem('atlas:favs') || '[]'); } catch { return []; }
+  });
+  const toggle = (id: string) => {
+    setFavs(prev => {
+      const next = prev.includes(id) ? prev.filter(f => f !== id) : [...prev, id];
+      localStorage.setItem('atlas:favs', JSON.stringify(next));
+      return next;
+    });
+  };
+  return [favs, toggle];
+}
+
+function Star({ active, onToggle }: { active: boolean; onToggle: (e: React.MouseEvent) => void }) {
+  return (
+    <button
+      onClick={onToggle}
+      title={active ? 'Quitar de favoritos' : 'Marcar como favorito'}
+      style={{
+        position: 'absolute', top: 10, right: 10, zIndex: 2,
+        width: 36, height: 36, borderRadius: '50%', border: '1px solid var(--border)',
+        background: 'rgba(11,16,32,0.75)', backdropFilter: 'blur(6px)',
+        fontSize: '1.05rem', cursor: 'pointer', lineHeight: 1,
+        filter: active ? 'none' : 'grayscale(1)', opacity: active ? 1 : 0.65,
+      }}
+    >⭐</button>
+  );
+}
+
 function Catalog() {
   const [q, setQ] = useState('');
   const [tipo, setTipo] = useState<TipoProyecto | 'todos'>('todos');
   const [prov, setProv] = useState<'todos' | 'con'>('todos');
   const [dock, setDock] = useState(false);
+  const [soloFavs, setSoloFavs] = useState(false);
+  const [favs, toggleFav] = useFavoritos();
 
   const list = useMemo(() => {
     const nq = q.trim().toLowerCase();
@@ -37,10 +69,11 @@ function Catalog() {
       if (tipo !== 'todos' && p.type !== tipo) return false;
       if (prov === 'con' && !p.providers) return false;
       if (dock && !p.docker) return false;
+      if (soloFavs && !favs.includes(p.id)) return false;
       if (nq && !(p.name + ' ' + p.description + ' ' + p.repo).toLowerCase().includes(nq)) return false;
       return true;
     });
-  }, [q, tipo, prov, dock]);
+  }, [q, tipo, prov, dock, soloFavs, favs]);
 
   return (
     <div>
@@ -74,12 +107,14 @@ function Catalog() {
         <div className="chips">
           <button className={'chip' + (prov === 'con' ? ' active' : '')} onClick={() => setProv(prov === 'con' ? 'todos' : 'con')}>🤖 con proveedor externo</button>
           <button className={'chip' + (dock ? ' active' : '')} onClick={() => setDock(!dock)}>🐳 con Docker en servidor</button>
+          <button className={'chip' + (soloFavs ? ' active' : '')} onClick={() => setSoloFavs(!soloFavs)}>⭐ Favoritos{favs.length > 0 ? ` (${favs.length})` : ''}</button>
         </div>
       </div>
       {list.length === 0 && <div className="empty">Sin resultados. Prueba con otro filtro.</div>}
       <div className="grid">
         {list.map(p => (
-          <a key={p.id} className="card" href={'#/p/' + p.id}>
+          <a key={p.id} className="card" href={'#/p/' + p.id} style={{ position: 'relative' }}>
+            <Star active={favs.includes(p.id)} onToggle={e => { e.preventDefault(); toggleFav(p.id); }} />
             <div className="thumb"><Thumb p={p} /></div>
             <div className="card-body">
               <h3>{p.name}</h3>
@@ -100,8 +135,10 @@ function Catalog() {
 
 function Detail({ id }: { id: string }) {
   const p = PROYECTOS.find(x => x.id === id);
+  const [favs, toggleFav] = useFavoritos();
   if (!p) return <div className="empty">Proyecto no encontrado. <a href="#/">Volver al catálogo</a></div>;
   const verified = p.providers.includes('✓');
+  const isFav = favs.includes(p.id);
   return (
     <div>
       <a className="back" href="#/">← Volver al catálogo</a>
@@ -120,6 +157,9 @@ function Detail({ id }: { id: string }) {
             {p.vercelUrl && <a className="btn primary" href={p.vercelUrl} target="_blank" rel="noreferrer">▲ Abrir web</a>}
             <a className="btn" href={p.github} target="_blank" rel="noreferrer">📦 GitHub</a>
             {p.github2 && <a className="btn" href={p.github2} target="_blank" rel="noreferrer">📦 GitHub (backend)</a>}
+            <button className={'btn' + (isFav ? ' primary' : '')} onClick={() => toggleFav(p.id)}>
+              {isFav ? '⭐ Favorito' : '☆ Marcar favorito'}
+            </button>
           </div>
         </div>
       </div>
