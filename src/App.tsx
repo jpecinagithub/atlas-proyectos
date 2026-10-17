@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
-import { PROYECTOS, TIPOS, type Proyecto, type TipoProyecto } from './data/projects';
+import { PROYECTOS, TIPOS, fechaActualizacion, type Proyecto, type TipoProyecto } from './data/projects';
 import { ProjectDiagram } from './arch';
 import { Ecosystem } from './eco';
 
@@ -207,7 +207,12 @@ export default function App() {
       <main className="main">
         {isEco ? <Ecosystem /> : m ? <Detail id={m[1]} /> : <Catalog />}
       </main>
-      <footer className="footer">Atlas de Proyectos · generado a partir del inventario verificado · {new Date().getFullYear()}</footer>
+      <footer className="footer">
+        <div style={{ marginBottom: 8 }}>
+          <a className="btn" href="/inventario-proyectos.xlsx" download>📥 Descargar inventario Excel</a>
+        </div>
+        Atlas de Proyectos · datos actualizados el {fechaActualizacion()} · {new Date().getFullYear()}
+      </footer>
       <Analytics />
     </>
   );

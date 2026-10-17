@@ -726,11 +726,16 @@ export const PROYECTOS: Proyecto[] = [
  }
 ];
 
-export const TIPOS: Record<TipoProyecto, {label: string; color: string}> = {
-  agente: {label: 'Agente IA', color: '#a78bfa'},
+export const TIPOS: Record<TipoProyecto, {label: string; color: string}> = {  agente: {label: 'Agente IA', color: '#a78bfa'},
   juego: {label: 'Juego', color: '#f472b6'},
   academia: {label: 'Academia', color: '#60a5fa'},
   herramienta: {label: 'Herramienta', color: '#34d399'},
   fullstack: {label: 'Full-stack', color: '#fbbf24'},
   contenido: {label: 'Contenido', color: '#94a3b8'},
 };
+
+export const LAST_UPDATED = '2026-10-17';
+export function fechaActualizacion(): string {
+  const [y, m, d] = LAST_UPDATED.split('-');
+  return `${d}/${m}/${y}`;
+}
