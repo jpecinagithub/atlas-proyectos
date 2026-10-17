@@ -16,7 +16,7 @@ export function FlowDiagram({ nodes, labels = [] as string[] }: { nodes: Node[];
     <svg className="diagram" viewBox={`0 0 ${W} ${H}`} role="img">
       <defs>
         <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-          <path d="M0,0 L8,3 L0,6 Z" fill="#818cf8" />
+          <path d="M0,0 L8,3 L0,6 Z" fill="#fb923c" />
         </marker>
       </defs>
       {nodes.map((n, i) => {

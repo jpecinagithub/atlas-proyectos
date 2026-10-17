@@ -22,7 +22,7 @@ function EcosystemDiagram() {
     <svg className="diagram" viewBox="0 0 940 340" role="img" aria-label="Ecosystem">
       <defs>
         <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-          <path d="M0,0 L8,3 L0,6 Z" fill="#818cf8" />
+          <path d="M0,0 L8,3 L0,6 Z" fill="#fb923c" />
         </marker>
       </defs>
       <rect className="node-hl" x={370} y={16} width={200} height={84} rx={12} />
@@ -40,14 +40,14 @@ function EcosystemDiagram() {
       <text x={770} y={206} textAnchor="middle">{t.dProviders}</text>
       <text className="sub" x={770} y={228} textAnchor="middle">OpenRouter · Groq · Alibaba</text>
       <text className="sub" x={770} y={246} textAnchor="middle">Mistral · Gemini · Neon…</text>
-      <line x1={430} y1={100} x2={220} y2={168} stroke="#818cf8" strokeWidth={2} markerEnd="url(#arrow2)" />
-      <line x1={470} y1={100} x2={470} y2={168} stroke="#818cf8" strokeWidth={2} markerEnd="url(#arrow2)" />
-      <line x1={510} y1={100} x2={720} y2={168} stroke="#818cf8" strokeWidth={2} markerEnd="url(#arrow2)" />
+      <line x1={430} y1={100} x2={220} y2={168} stroke="#fb923c" strokeWidth={2} markerEnd="url(#arrow2)" />
+      <line x1={470} y1={100} x2={470} y2={168} stroke="#fb923c" strokeWidth={2} markerEnd="url(#arrow2)" />
+      <line x1={510} y1={100} x2={720} y2={168} stroke="#fb923c" strokeWidth={2} markerEnd="url(#arrow2)" />
       <text className="elabel" x={300} y={140} textAnchor="middle">{t.dDeploys2}</text>
       <text className="elabel" x={500} y={140} textAnchor="middle">{t.dHosts}</text>
       <text className="elabel" x={640} y={140} textAnchor="middle">{t.dConsumes}</text>
-      <line x1={170} y1={270} x2={170} y2={312} stroke="#818cf8" strokeWidth={2} markerEnd="url(#arrow2)" />
-      <line x1={470} y1={270} x2={470} y2={312} stroke="#818cf8" strokeWidth={2} markerEnd="url(#arrow2)" />
+      <line x1={170} y1={270} x2={170} y2={312} stroke="#fb923c" strokeWidth={2} markerEnd="url(#arrow2)" />
+      <line x1={470} y1={270} x2={470} y2={312} stroke="#fb923c" strokeWidth={2} markerEnd="url(#arrow2)" />
       <text x={170} y={332} textAnchor="middle" fontSize={13} fontWeight={700}>{t.dUsers}</text>
       <text x={470} y={332} textAnchor="middle" fontSize={13} fontWeight={700}>{t.dUsers}</text>
     </svg>
@@ -69,7 +69,7 @@ export function Ecosystem() {
         <EcosystemDiagram />
         <div className="legend">
           <span><i style={{ background: '#a78bfa' }} />{t.legCode}</span>
-          <span><i style={{ background: '#818cf8' }} />{t.legPlat}</span>
+          <span><i style={{ background: '#fb923c' }} />{t.legPlat}</span>
         </div>
       </div>
       <div className="stats">

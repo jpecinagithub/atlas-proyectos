@@ -12,8 +12,8 @@ export default defineConfig({
         name: 'Atlas de Proyectos',
         short_name: 'Atlas',
         description: 'Atlas visual y educativo de los 51 proyectos: arquitectura, despliegues, repositorios, Docker y proveedores de IA.',
-        theme_color: '#0b1020',
-        background_color: '#0b1020',
+        theme_color: '#090c16',
+        background_color: '#090c16',
         display: 'standalone',
         start_url: '/',
         icons: [
