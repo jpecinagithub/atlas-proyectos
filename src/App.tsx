@@ -128,7 +128,9 @@ function Catalog({ lang }: { lang: Lang }) {
                 <span className="badge type" style={{ background: TIPO_COLOR[p.type] }}>{typeLabel(p.type)}</span>
                 {p.providers && <span className="badge">🤖 {p.providers.replace(/ ✓/g, '').split(',')[0]}</span>}
                 {p.docker && !p.docker.includes('sin docker') && <span className="badge">🐳 Docker</span>}
-                {!p.vercelUrl && <span className="badge">{t.noVercel}</span>}
+                {!p.vercelUrl && (p.serverUrl
+                  ? <a className="badge" href={p.serverUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} style={{ textDecoration: 'none' }}>🖥️ {t.srv}</a>
+                  : <span className="badge">{t.noVercel}</span>)}
               </div>
             </div>
           </a>
@@ -145,6 +147,7 @@ function Detail({ id, lang }: { id: string; lang: Lang }) {
   if (!p) return <div className="empty">{t.notFound} <a href="#/">{t.back}</a></div>;
   const verified = p.providers.includes('✓');
   const isFav = favs.includes(p.id);
+  const siteUrl = p.vercelUrl || p.serverUrl || null;
   const typeLabel = t[('type_' + p.type) as keyof typeof t] as string;
   return (
     <div>
@@ -161,7 +164,7 @@ function Detail({ id, lang }: { id: string; lang: Lang }) {
             </div>
           </div>
           <div className="links">
-            {p.vercelUrl && <a className="btn primary" href={p.vercelUrl} target="_blank" rel="noreferrer">{t.openSite}</a>}
+            {siteUrl && <a className="btn primary" href={siteUrl} target="_blank" rel="noreferrer">{t.openSite}</a>}
             <a className="btn" href={p.github} target="_blank" rel="noreferrer">{t.github}</a>
             {p.github2 && <a className="btn" href={p.github2} target="_blank" rel="noreferrer">{t.githubBack}</a>}
             <button className={'btn' + (isFav ? ' primary' : '')} onClick={() => toggleFav(p.id)}>
@@ -181,7 +184,7 @@ function Detail({ id, lang }: { id: string; lang: Lang }) {
             <dt>{t.kType}</dt><dd>{typeLabel}</dd>
             <dt>{t.kRepo}</dt><dd><a href={p.github} target="_blank" rel="noreferrer">{p.repo}</a></dd>
             {p.github2 && <><dt>{t.kRepoBack}</dt><dd><a href={p.github2} target="_blank" rel="noreferrer">BACK-AGENT</a></dd></>}
-            <dt>{t.kDeploy}</dt><dd>{p.vercelUrl ? <a href={p.vercelUrl} target="_blank" rel="noreferrer">{p.vercelUrl.replace('https://', '')}</a> : t.noDeploy}</dd>
+            <dt>{t.kDeploy}</dt><dd>{siteUrl ? <a href={siteUrl} target="_blank" rel="noreferrer">{siteUrl.replace('https://', '')}</a> : t.noDeploy}</dd>
             <dt>{t.kProv}</dt><dd>{p.providers ? p.providers + (verified ? '' : ' ' + t.toConfirm) : t.none}</dd>
             <dt>{t.kDocker}</dt><dd>{p.docker || t.none}</dd>
             <dt>{t.kVis}</dt><dd>{p.visibility === 'Privado' ? t.priv : t.pub}</dd>

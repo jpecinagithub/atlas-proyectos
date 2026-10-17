@@ -4,6 +4,7 @@ export type Topologia = 'vercel' | 'serverless-ai' | 'docker' | 'llm-local' | 'a
 export interface Proyecto {
   id: string; repo: string; name: string; vercelUrl: string | null;
   github: string; github2?: string; visibility: string; description: string; description_en: string;
+  serverUrl?: string;
   providers: string; docker: string; notes: string;
   type: TipoProyecto; topology: Topologia;
 }
@@ -218,7 +219,8 @@ export const PROYECTOS: Proyecto[] = [
   "notes": "Desplegado en servidor propio: http://143.47.63.169/erp3/login (verificado 200 el 2026-10-17; solo HTTP, HTTPS no responde)",
   "type": "fullstack",
   "topology": "servidor",
-  "description_en": "ERP deployed on the own server."
+  "description_en": "ERP deployed on the own server.",
+  "serverUrl": "https://jpecina.duckdns.org/erp3/login"
  },
  {
   "id": "estudio-voz",
