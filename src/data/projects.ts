@@ -21,7 +21,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "academia",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Accounting standards portal: 40 modules, 387 questions and simulators."
  },
  {
   "id": "agent-job",
@@ -36,7 +37,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "Front del proyecto Agent Job — vinculado con BACK-AGENT (backend). Único proyecto con arquitectura de dos repos.",
   "type": "agente",
-  "topology": "agentjob"
+  "topology": "agentjob",
+  "description_en": "Autonomous job-search agent: frontend on Vercel + backend in a separate repo."
  },
  {
   "id": "agent-lab",
@@ -50,7 +52,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "agente",
-  "topology": "serverless-ai"
+  "topology": "serverless-ai",
+  "description_en": "AI agent harness laboratory (6-stage loop, Qwen)."
  },
  {
   "id": "ai-fundamentals-academy",
@@ -64,7 +67,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "academia",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Interactive AI fundamentals academy (LLMs, prompts, agents, APIs)."
  },
  {
   "id": "alfonso65",
@@ -78,7 +82,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "contenido",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Alfonso65 web project."
  },
  {
   "id": "alterna",
@@ -92,7 +97,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "academia",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Interactive alternating-current lab: 15 experiments (PWA)."
  },
  {
   "id": "appforge-ai-studio",
@@ -106,7 +112,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "appforge-studio",
   "notes": "",
   "type": "agente",
-  "topology": "docker"
+  "topology": "docker",
+  "description_en": "AI-assisted web app development studio (Phase 1)."
  },
  {
   "id": "aula-rec",
@@ -120,7 +127,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "herramienta",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "100% in-browser screen recorder for teachers (PWA)."
  },
  {
   "id": "brandforge",
@@ -134,7 +142,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "docker-api, docker-worker, docker-postgres (postgres) + cron backup 3:15",
   "notes": "",
   "type": "agente",
-  "topology": "docker"
+  "topology": "docker",
+  "description_en": "AI-powered marketing and branding SaaS platform with agents."
  },
  {
   "id": "caza-en-el-cielo",
@@ -148,7 +157,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "juego",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Arcade aiming game: bird hunting with Canvas."
  },
  {
   "id": "chatbot-basico",
@@ -162,7 +172,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "contenido",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Basic chatbot."
  },
  {
   "id": "dental-detective",
@@ -176,7 +187,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "juego",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "3D dental-diagnosis puzzle game (original IP, no backend)."
  },
  {
   "id": "dgt-permiso-b-simulator",
@@ -190,7 +202,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "academia",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "DGT class-B theory exam simulator."
  },
  {
   "id": "erp3",
@@ -204,7 +217,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "PM2 erp3-backend (nativo, sin docker)",
   "notes": "Desplegado en servidor propio: http://143.47.63.169/erp3/login (verificado 200 el 2026-10-17; solo HTTP, HTTPS no responde)",
   "type": "fullstack",
-  "topology": "servidor"
+  "topology": "servidor",
+  "description_en": "ERP deployed on the own server."
  },
  {
   "id": "estudio-voz",
@@ -218,7 +232,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "herramienta",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Spanish audio studio: text-to-speech, transcription, recorder and export."
  },
  {
   "id": "fetchlab",
@@ -232,7 +247,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "herramienta",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Lightweight REST client running 100% in the browser."
  },
  {
   "id": "gameforge-ai-studio",
@@ -246,7 +262,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "gameforge-api, gameforge-worker, gameforge-runner, gameforge-browser, gameforge-postgres, gameforge-redis, caddy (reverse proxy)",
   "notes": "",
   "type": "agente",
-  "topology": "docker"
+  "topology": "docker",
+  "description_en": "AI-powered browser game development studio (Vite+React, Fastify+Postgres+Redis)."
  },
  {
   "id": "harness-lab",
@@ -260,7 +277,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "academia",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Bilingual LLM-harness engineering academy."
  },
  {
   "id": "jon-os",
@@ -274,7 +292,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "herramienta",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Portfolio simulating a desktop operating system."
  },
  {
   "id": "js-academy",
@@ -288,7 +307,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "academia",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "JavaScript academy with labs and visualizers."
  },
  {
   "id": "js-playground",
@@ -302,7 +322,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "herramienta",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Step-by-step JavaScript playground (bilingual)."
  },
  {
   "id": "laptop-radar",
@@ -316,7 +337,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "laptop-radar-api, laptop-radar-db (postgres) + cron diario 9:00",
   "notes": "",
   "type": "agente",
-  "topology": "docker"
+  "topology": "docker",
+  "description_en": "Laptop price tracker (Vite+React, Fastify+Postgres API, daily Groq agent)."
  },
  {
   "id": "learning",
@@ -330,7 +352,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "academia",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Learning platform."
  },
  {
   "id": "llm-chat",
@@ -344,7 +367,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "llm-gateway (qwen-gateway) + qwen-llm (llama.cpp, modelo Qwen local)",
   "notes": "Chatbot sencillo con modelo LLM alojado en el servidor propio; tiene las limitaciones de un modelo local.",
   "type": "agente",
-  "topology": "llm-local"
+  "topology": "llm-local",
+  "description_en": "Simple chatbot with a local LLM model on the own server."
  },
  {
   "id": "lumacut-video-editor",
@@ -358,7 +382,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "herramienta",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "LumaCut browser video editor."
  },
  {
   "id": "lumen-city",
@@ -372,7 +397,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "juego",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Third-person 3D action-exploration video game."
  },
  {
   "id": "memora",
@@ -386,7 +412,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "herramienta",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Memory-training portal with 9 games (no backend)."
  },
  {
   "id": "motion-dna",
@@ -400,7 +427,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "herramienta",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Motion analyzer (Motion DNA)."
  },
  {
   "id": "mylife-journal",
@@ -414,7 +442,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "fullstack",
-  "topology": "mixto-db"
+  "topology": "mixto-db",
+  "description_en": "Multimedia personal journal with calendar and Diaro migration."
  },
  {
   "id": "neon-escape",
@@ -428,7 +457,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "juego",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "3D arcade driving game: escape the police in a neon city (paused)."
  },
  {
   "id": "nextjs",
@@ -442,7 +472,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "herramienta",
-  "topology": "serverless-ai"
+  "topology": "serverless-ai",
+  "description_en": "Atlas AI Ops: production-grade Next.js 14 app."
  },
  {
   "id": "nexus",
@@ -456,7 +487,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "nexus-api, nexus-worker, nexus-db (postgres) + cron backup 3:00",
   "notes": "",
   "type": "agente",
-  "topology": "docker"
+  "topology": "docker",
+  "description_en": "Private digital-ecosystem control center (Phase 1)."
  },
  {
   "id": "nobel-explorer",
@@ -470,7 +502,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "academia",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Bilingual Nobel Prize portal since 1901 with Wikipedia biographies."
  },
  {
   "id": "obt-intelligence-brief",
@@ -484,7 +517,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "contenido",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "OBT intelligence brief."
  },
  {
   "id": "ochomiles",
@@ -498,7 +532,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "academia",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Relief map of the 14 eight-thousanders with cards and 3D viewer (bilingual)."
  },
  {
   "id": "pdfwriter",
@@ -512,7 +547,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "herramienta",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "100% in-browser PDF editor, private with no uploads."
  },
  {
   "id": "personal-video-studio",
@@ -526,7 +562,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "fullstack",
-  "topology": "mixto-db"
+  "topology": "mixto-db",
+  "description_en": "Personal video publishing and playback platform (serverless)."
  },
  {
   "id": "photo-puzzle-maker",
@@ -540,7 +577,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "herramienta",
-  "topology": "serverless-ai"
+  "topology": "serverless-ai",
+  "description_en": "App to create puzzles from photos."
  },
  {
   "id": "pisa-simulator",
@@ -554,7 +592,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "academia",
-  "topology": "mixto-db"
+  "topology": "mixto-db",
+  "description_en": "PISA results simulator and explorer (bilingual)."
  },
  {
   "id": "princesa-explorer",
@@ -568,7 +607,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "herramienta",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Princesa Explorer web explorer."
  },
  {
   "id": "react-academy",
@@ -582,7 +622,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "academia",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "React academy: 32 labs, playground and challenges (bilingual)."
  },
  {
   "id": "react-visual-playground",
@@ -596,7 +637,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "herramienta",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Visual playground to experiment with React."
  },
  {
   "id": "recorrido-historico-san-josemaria-en-logrono",
@@ -610,7 +652,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "contenido",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Historical tour of Saint Josemaría in Logroño."
  },
  {
   "id": "relativity-academy",
@@ -624,7 +667,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "academia",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Relativity academy: experiment with spacetime (bilingual)."
  },
  {
   "id": "serverless-projects-hub",
@@ -638,7 +682,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "fullstack",
-  "topology": "mixto-db"
+  "topology": "mixto-db",
+  "description_en": "Community serverless-project directory."
  },
  {
   "id": "spark-chat",
@@ -652,7 +697,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "agente",
-  "topology": "serverless-ai"
+  "topology": "serverless-ai",
+  "description_en": "Chatbot powered by Muse Spark."
  },
  {
   "id": "tools",
@@ -666,7 +712,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "herramienta",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Personal web-app dashboard: 9 editable tools (PWA)."
  },
  {
   "id": "tresmiles-pirineo",
@@ -680,7 +727,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "academia",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "Navigable map of Pyrenean three-thousanders (fork)."
  },
  {
   "id": "velocity-rush",
@@ -694,7 +742,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "",
   "notes": "",
   "type": "juego",
-  "topology": "vercel"
+  "topology": "vercel",
+  "description_en": "3D arcade racing game for browsers (original IP)."
  },
  {
   "id": "voice-clone-frontend",
@@ -708,7 +757,8 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "voice-gateway, voicestudio, voice-tunnel (cloudflared)",
   "notes": "",
   "type": "agente",
-  "topology": "docker"
+  "topology": "docker",
+  "description_en": "Voice-cloning frontend."
  },
  {
   "id": "wan-ai-video-studio",
@@ -722,16 +772,18 @@ export const PROYECTOS: Proyecto[] = [
   "docker": "cron magic-hour-claim 9:00 y 10:30 (sin docker)",
   "notes": "",
   "type": "agente",
-  "topology": "serverless-ai"
+  "topology": "serverless-ai",
+  "description_en": "Serverless AI video-generation studio (Pollinations + Magic Hour)."
  }
 ];
 
-export const TIPOS: Record<TipoProyecto, {label: string; color: string}> = {  agente: {label: 'Agente IA', color: '#a78bfa'},
-  juego: {label: 'Juego', color: '#f472b6'},
-  academia: {label: 'Academia', color: '#60a5fa'},
-  herramienta: {label: 'Herramienta', color: '#34d399'},
-  fullstack: {label: 'Full-stack', color: '#fbbf24'},
-  contenido: {label: 'Contenido', color: '#94a3b8'},
+export const TIPO_COLOR: Record<TipoProyecto, string> = {
+  agente: '#a78bfa',
+  juego: '#f472b6',
+  academia: '#60a5fa',
+  herramienta: '#34d399',
+  fullstack: '#fbbf24',
+  contenido: '#94a3b8',
 };
 
 export const LAST_UPDATED = '2026-10-17';

@@ -1,4 +1,5 @@
 import type { Proyecto } from './data/projects';
+import { useLang, STRINGS } from './i18n';
 
 interface Node { title: string; sub?: string; hl?: boolean; }
 
@@ -44,55 +45,48 @@ export function FlowDiagram({ nodes, labels = [] as string[] }: { nodes: Node[];
   );
 }
 
-const TOPOLOGY_INFO: Record<string, string> = {
-  'vercel': 'Todo vive en Vercel: la web estática y, si hace falta, funciones serverless. Sin servidor propio.',
-  'serverless-ai': 'Frontend y funciones serverless en Vercel; la IA se consume como API externa.',
-  'docker': 'Frontend en Vercel; el backend corre en contenedores Docker del servidor propio.',
-  'llm-local': 'Frontend en Vercel; el modelo LLM corre en local en el servidor (sin proveedor externo).',
-  'agentjob': 'Arquitectura de dos repositorios: el front desplegado en Vercel y el backend en un repo separado sin despliegue.',
-  'servidor': 'Aplicación completa en el servidor propio, sin Vercel.',
-  'mixto-db': 'Frontend en Vercel con base de datos y almacenamiento gestionados (serverless).',
-};
-
 export function ProjectDiagram({ p }: { p: Proyecto }) {
-  const user: Node = { title: '👤 Usuario', sub: 'navegador' };
+  const { lang } = useLang();
+  const t = STRINGS[lang];
+  const topoKey = ('topo_' + p.topology) as keyof typeof t;
+  const user: Node = { title: t.user, sub: t.browser };
   let nodes: Node[] = [];
   let labels: string[] = [];
   switch (p.topology) {
     case 'serverless-ai':
-      nodes = [user, { title: '▲ Vercel', sub: 'front + functions', hl: true }, { title: '🤖 ' + short(p.providers || 'Proveedor IA', 22), sub: 'API externa' }];
+      nodes = [user, { title: t.vercel, sub: t.frontFunctions, hl: true }, { title: '🤖 ' + short(p.providers || 'AI', 22), sub: t.extApi }];
       labels = ['HTTPS', 'API'];
       break;
     case 'docker': {
       const conts = p.docker.split(',').length;
-      nodes = [user, { title: '▲ Vercel', sub: 'frontend', hl: true }, { title: '🐳 Servidor Docker', sub: `${conts} contenedores` }, { title: '🤖 ' + short(p.providers || 'Proveedor IA', 22), sub: 'API externa' }];
+      nodes = [user, { title: t.vercel, sub: t.frontend, hl: true }, { title: t.dockerServer, sub: `${conts} ${t.containers}` }, { title: '🤖 ' + short(p.providers || 'AI', 22), sub: t.extApi }];
       labels = ['HTTPS', 'API', 'API'];
       break;
     }
     case 'llm-local':
-      nodes = [user, { title: '▲ Vercel', sub: 'frontend', hl: true }, { title: '🖥️ Servidor', sub: 'gateway' }, { title: '🦙 llama.cpp', sub: 'Qwen en local' }];
+      nodes = [user, { title: t.vercel, sub: t.frontend, hl: true }, { title: t.server, sub: t.gateway }, { title: t.llamacpp, sub: t.qwenLocal }];
       labels = ['HTTPS', 'HTTP', 'local'];
       break;
     case 'agentjob':
-      nodes = [user, { title: '▲ Vercel', sub: 'FRONT-AGENT', hl: true }, { title: '📦 GitHub', sub: 'BACK-AGENT · sin despliegue' }];
-      labels = ['usa', '—'];
+      nodes = [user, { title: t.vercel, sub: 'FRONT-AGENT', hl: true }, { title: t.gh, sub: t.backAgentNoDeploy }];
+      labels = ['→', '—'];
       break;
     case 'servidor':
-      nodes = [user, { title: '🖥️ Servidor propio', sub: 'PM2 · erp3-backend', hl: true }, { title: '🗄️ MySQL 8', sub: 'nativo' }];
+      nodes = [user, { title: t.ownServer, sub: t.pm2erp, hl: true }, { title: t.mysql, sub: t.native }];
       labels = ['HTTP', 'SQL'];
       break;
     case 'mixto-db':
-      nodes = [user, { title: '▲ Vercel', sub: 'front + functions', hl: true }, { title: '🗄️ ' + short(p.providers || 'BD gestionada', 24), sub: 'serverless' }];
+      nodes = [user, { title: t.vercel, sub: t.frontFunctions, hl: true }, { title: '🗄️ ' + short(p.providers || 'DB', 24), sub: 'serverless' }];
       labels = ['HTTPS', 'SQL/API'];
       break;
     default:
-      nodes = [user, { title: '▲ Vercel', sub: 'Edge Network', hl: true }, { title: '📄 App web', sub: 'estática / serverless' }];
+      nodes = [user, { title: t.vercel, sub: t.edge, hl: true }, { title: t.webApp, sub: t.staticServerless }];
       labels = ['HTTPS', ''];
   }
   return (
     <div>
       <FlowDiagram nodes={nodes} labels={labels} />
-      <p className="flow-note">🧭 <b>Cómo leerlo:</b> {TOPOLOGY_INFO[p.topology]}</p>
+      <p className="flow-note">🧭 <b>{t.howTo}</b> {t[topoKey] as string}</p>
     </div>
   );
 }
