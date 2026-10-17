@@ -87,7 +87,7 @@ function Catalog() {
               <div className="badges">
                 <span className="badge type" style={{ background: TIPOS[p.type].color }}>{TIPOS[p.type].label}</span>
                 {p.providers && <span className="badge">🤖 {p.providers.replace(/ ✓/g, '').split(',')[0]}</span>}
-                {p.docker && <span className="badge">🐳 Docker</span>}
+                {p.docker && !p.docker.includes('sin docker') && <span className="badge">🐳 Docker</span>}
                 {!p.vercelUrl && <span className="badge">sin Vercel</span>}
               </div>
             </div>
