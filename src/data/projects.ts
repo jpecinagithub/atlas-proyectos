@@ -3,7 +3,7 @@ export type Topologia = 'vercel' | 'serverless-ai' | 'docker' | 'llm-local' | 'a
 
 export interface Proyecto {
   id: string; repo: string; name: string; vercelUrl: string | null;
-  github: string; github2?: string; visibility: string; description: string;
+  github: string; github2?: string; visibility: string; description: string; description_en: string;
   providers: string; docker: string; notes: string;
   type: TipoProyecto; topology: Topologia;
 }
