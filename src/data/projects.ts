@@ -508,21 +508,6 @@ export const PROYECTOS: Proyecto[] = [
   "description_en": "Bilingual Nobel Prize portal since 1901 with Wikipedia biographies."
  },
  {
-  "id": "obt-intelligence-brief",
-  "repo": "obt-intelligence-brief",
-  "name": "obt-intelligence-brief",
-  "vercelUrl": "https://obt-intelligence-brief.vercel.app",
-  "github": "https://github.com/jpecinagithub/obt-intelligence-brief",
-  "visibility": "Público",
-  "description": "Informe de inteligencia OBT (brief).",
-  "providers": "",
-  "docker": "",
-  "notes": "",
-  "type": "contenido",
-  "topology": "vercel",
-  "description_en": "OBT intelligence brief."
- },
- {
   "id": "ochomiles",
   "repo": "ochomiles",
   "name": "ochomiles",
