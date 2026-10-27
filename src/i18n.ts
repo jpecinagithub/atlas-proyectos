@@ -6,10 +6,10 @@ export const LangCtx = createContext<{ lang: Lang; setLang: (l: Lang) => void }>
 export const useLang = () => useContext(LangCtx);
 
 const es = {
-  subtitle: '51 proyectos · arquitectura visual',
+  subtitle: '50 proyectos · arquitectura visual',
   navCatalog: 'Catálogo', navEco: 'Ecosistema',
   heroTitleA: 'Atlas de', heroTitleB: 'Proyectos',
-  heroP: 'Los 51 proyectos explicados de forma visual: qué es cada uno, dónde vive su código, dónde se despliega, qué arquitectura usa y con qué servicios externos habla.',
+  heroP: 'Los 50 proyectos explicados de forma visual: qué es cada uno, dónde vive su código, dónde se despliega, qué arquitectura usa y con qué servicios externos habla.',
   sProjects: 'proyectos', sVercel: 'en Vercel', sDocker: 'con Docker', sProv: 'proveedor verificado',
   search: '🔍 Buscar proyecto…',
   all: 'Todos',
@@ -46,13 +46,13 @@ const es = {
   topo_mixto_db: 'Frontend en Vercel con base de datos y almacenamiento gestionados (serverless).',
   // ecosistema
   ecoTitleA: 'El', ecoTitleB: 'ecosistema', ecoTitleC: 'completo',
-  ecoP: 'Tres pilares sostienen los 51 proyectos: GitHub guarda el código, Vercel sirve las webs y el servidor propio corre los backends con Docker. Los proveedores externos aportan IA, bases de datos y servicios.',
+  ecoP: 'Tres pilares sostienen los 50 proyectos: GitHub guarda el código, Vercel sirve las webs y el servidor propio corre los backends con Docker. Los proveedores externos aportan IA, bases de datos y servicios.',
   eProjects: 'proyectos', eRepos: 'repos GitHub', eDeploys: 'despliegues Vercel', eContainers: 'contenedores Docker',
   eProv: 'con proveedor externo', eDocker: 'con Docker en servidor',
   provTitle: '🤖 Proveedores externos verificados', thProject: 'Proyecto', thProvider: 'Proveedor',
   srvTitle: '🖥️ Servidor propio · inventario', thService: 'Servicio', thDetail: 'Detalle',
   srvNote: 'Tres contenedores huérfanos (docker-api/worker/postgres) resultaron ser el backend de brandforge, identificado por sus variables de entorno.',
-  dGithub: '📦 GitHub', dRepos: '52 repositorios', dVercel: '▲ Vercel', dDeploys: '50 despliegues web',
+  dGithub: '📦 GitHub', dRepos: '51 repositorios', dVercel: '▲ Vercel', dDeploys: '49 despliegues web',
   dFrontServerless: 'front + serverless', dOwnServer: '🖥️ Servidor propio', dContainers: '21 contenedores Docker',
   dInfra: '+ MySQL · PM2 · crons', dProviders: '🤖 Proveedores', dUsers: '👤 Usuarios',
   dDeploys2: 'despliega', dHosts: 'aloja', dConsumes: 'consume',
@@ -62,10 +62,10 @@ const es = {
 export type Strings = typeof es;
 
 const en: Strings = {
-  subtitle: '51 projects · visual architecture',
+  subtitle: '50 projects · visual architecture',
   navCatalog: 'Catalog', navEco: 'Ecosystem',
   heroTitleA: 'Project', heroTitleB: 'Atlas',
-  heroP: 'All 51 projects explained visually: what each one is, where its code lives, where it deploys, which architecture it uses and which external services it talks to.',
+  heroP: 'All 50 projects explained visually: what each one is, where its code lives, where it deploys, which architecture it uses and which external services it talks to.',
   sProjects: 'projects', sVercel: 'on Vercel', sDocker: 'with Docker', sProv: 'verified provider',
   search: '🔍 Search projects…',
   all: 'All',
@@ -100,13 +100,13 @@ const en: Strings = {
   topo_servidor: 'Full application on the own server, no Vercel.',
   topo_mixto_db: 'Frontend on Vercel with managed database and storage (serverless).',
   ecoTitleA: 'The', ecoTitleB: 'ecosystem', ecoTitleC: 'at a glance',
-  ecoP: 'Three pillars hold the 51 projects: GitHub stores the code, Vercel serves the websites and the own server runs the backends with Docker. External providers bring AI, databases and services.',
+  ecoP: 'Three pillars hold the 50 projects: GitHub stores the code, Vercel serves the websites and the own server runs the backends with Docker. External providers bring AI, databases and services.',
   eProjects: 'projects', eRepos: 'GitHub repos', eDeploys: 'Vercel deploys', eContainers: 'Docker containers',
   eProv: 'with external provider', eDocker: 'with Docker on server',
   provTitle: '🤖 Verified external providers', thProject: 'Project', thProvider: 'Provider',
   srvTitle: '🖥️ Own server · inventory', thService: 'Service', thDetail: 'Detail',
   srvNote: 'Three orphan containers (docker-api/worker/postgres) turned out to be the brandforge backend, identified by their environment variables.',
-  dGithub: '📦 GitHub', dRepos: '52 repositories', dVercel: '▲ Vercel', dDeploys: '50 web deploys',
+  dGithub: '📦 GitHub', dRepos: '51 repositories', dVercel: '▲ Vercel', dDeploys: '49 web deploys',
   dFrontServerless: 'front + serverless', dOwnServer: '🖥️ Own server', dContainers: '21 Docker containers',
   dInfra: '+ MySQL · PM2 · crons', dProviders: '🤖 Providers', dUsers: '👤 Users',
   dDeploys2: 'deploys', dHosts: 'hosts', dConsumes: 'consumes',
