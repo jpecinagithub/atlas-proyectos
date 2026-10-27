@@ -73,9 +73,9 @@ export function Ecosystem() {
         </div>
       </div>
       <div className="stats">
-        <div className="stat"><b>49</b><span>{t.eProjects}</span></div>
+        <div className="stat"><b>50</b><span>{t.eProjects}</span></div>
         <div className="stat"><b>51</b><span>{t.eRepos}</span></div>
-        <div className="stat"><b>50</b><span>{t.eDeploys}</span></div>
+        <div className="stat"><b>49</b><span>{t.eDeploys}</span></div>
         <div className="stat"><b>21</b><span>{t.eContainers}</span></div>
         <div className="stat"><b>{conProv.length}</b><span>{t.eProv}</span></div>
         <div className="stat"><b>{conDocker.length}</b><span>{t.eDocker}</span></div>
